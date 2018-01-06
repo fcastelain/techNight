@@ -1,5 +1,5 @@
-# now we create the network of production
-docker network create --subnet=172.19.0.0/16 prodNetwork
+# Build the images of the mysql
+docker build ./mysql/ --tag iterator/mysql:latest
 
-# add the mysql prod to the network
-docker run --net prodNetwork --ip 172.19.0.2 -dti --name mysqlProdContainer fcastelain/mysql:latest
+# Build the image of the python back
+docker build ./python/ --tag iterator/python:latest
