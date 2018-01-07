@@ -5,3 +5,5 @@ docker network create --subnet=172.19.0.0/16 prodNetwork
 docker run --net prodNetwork --ip 172.19.0.2 -p 3306:3306 -dti --name mysqlProdContainer iterator/mysql:latest
 # add the python prod to the network
 docker run --net prodNetwork --ip 172.19.0.3 -p 8081:8081 -dti --name pythonProdContainer iterator/python:latest
+# add the python prod to the network (to make some test)
+#docker run --net prodNetwork -t iterator/newman:latest --collection="collection/iterator-test-nrg.postman_collection.json" --environment="environment/PRD.postman_environment.json" --html="newman-results.html"
