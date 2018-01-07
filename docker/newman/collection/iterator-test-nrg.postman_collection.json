@@ -1,0 +1,112 @@
+{
+	"info": {
+		"name": "iterator-test-nrg",
+		"_postman_id": "91ee07b9-7548-b0e8-323d-382209edb94c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - Add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3dcbbc8-97db-443d-b5a6-5edd5354b791",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/add",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"add"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "02 - Remove",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8f29f37-93a1-4d8a-bdd9-b0664a369578",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/remove",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"remove"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "03 - Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3c3dc8a-d554-4947-907e-7d324c97d5e3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/something",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"something"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
