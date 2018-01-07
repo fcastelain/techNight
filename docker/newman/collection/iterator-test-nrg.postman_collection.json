@@ -12,12 +12,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3dcbbc8-97db-443d-b5a6-5edd5354b791",
+						"id": "4edb5f21-4733-452c-a426-a9e5afa6967a",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
@@ -46,12 +44,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c8f29f37-93a1-4d8a-bdd9-b0664a369578",
+						"id": "c7e8c72e-a5bf-4de0-9a52-a2b323cf0582",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
 						]
 					}
 				}
@@ -80,12 +76,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "80f644fe-ab0e-4dfb-884c-72e99f449c4d",
+						"id": "dd9af59d-bca4-4936-9902-be0f75e7d0de",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(404);",
-							"});"
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
 						]
 					}
 				}
