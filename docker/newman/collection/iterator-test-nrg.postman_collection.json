@@ -80,11 +80,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b3c3dc8a-d554-4947-907e-7d324c97d5e3",
+						"id": "80f644fe-ab0e-4dfb-884c-72e99f449c4d",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(400);",
+							"    pm.response.to.have.status(404);",
 							"});"
 						]
 					}
