@@ -8,15 +8,19 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
     # GET
     def do_GET(self):
-        # Send response status code
-        self.send_response(200)
 
         if self.path == "/add":
-            message = "add 1 to iterator"
+            # Send response status code
+            self.send_response(200)
+            message = "{ \"action\": \"ADD\", \"value\": 1 }"
         elif self.path == "/remove":
-            message = "remove 1 to iterator"
+            # Send response status code
+            self.send_response(200)
+            message = "{ \"action\": \"REMOVE\", \"value\": 1 }"
         else:
-            message = "Wrong ULR"
+            # Send response status code
+            self.send_response(404)
+            message = "{ \"code\": 1, \"message\": \"wrong URL\" }"
 
         # Send headers
         self.send_header('Content-type', 'text/html')
