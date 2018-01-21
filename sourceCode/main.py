@@ -1,22 +1,24 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 hostport = 8081
-hostname = "127.0.0.1"
+ostname = "0.0.0.0"
 
 # HTTPRequestHandler class
 class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
     # GET
     def do_GET(self):
-        # Send response status code
-        self.send_response(200)
 
+        # infunction of the path change the action
         if self.path == "/add":
-            message = "add 1 to iterator"
+            self.send_response(200)
+            message = "{ \"action\": \"ADD\", \"value\": 0 }"
         elif self.path == "/remove":
-            message = "remove 1 to iterator"
+            self.send_response(200)
+            message = "{ \"action\": \"REMOVE\", \"value\": 0}"
         else:
-            message = "Wrong ULR"
+            self.send_response(404)
+            message = "{ \"code\": 1, \"message\": \"wrong url\" }"
 
         # Send headers
         self.send_header('Content-type', 'text/html')
