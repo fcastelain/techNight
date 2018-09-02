@@ -1,7 +1,12 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import configparser
 
-hostport = 8081
-hostname = "0.0.0.0"
+# Get the good properties
+config = configparser.ConfigParser()
+config.read('properties/INT.properties')
+
+hostport = config['ServerSection']['listen.port']
+hostname = config['ServerSection']['listen.host']
 
 # HTTPRequestHandler class
 class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
@@ -36,7 +41,7 @@ def run():
     print('starting server...')
 
     # Server settings
-    server_address = (hostname, hostport)
+    server_address = (hostname, int(hostport))
     httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
     print('running server...')
     httpd.serve_forever()
